@@ -2436,6 +2436,7 @@ GameObject:
   - component: {fileID: 574249634}
   - component: {fileID: 574249636}
   - component: {fileID: 574249635}
+  - component: {fileID: 574249637}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -2502,6 +2503,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574249633}
   m_CullTransparentMesh: 0
+--- !u!114 &574249637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574249633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e229e909fe232a4468dfe2826a432a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &583381182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7308232186744828534, guid: 488ca3c882bb8af46b11702d724c87f0,
@@ -5790,7 +5803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383472452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.5, y: 25.3, z: -6}
+  m_LocalPosition: {x: -46.5, y: 33.4, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8754,7 +8767,7 @@ PrefabInstance:
     - target: {fileID: 6695007697798422000, guid: 5353948af62af5c4c96ca39c2e12434c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.6
+      value: 36.15
       objectReference: {fileID: 0}
     - target: {fileID: 6695007697798422000, guid: 5353948af62af5c4c96ca39c2e12434c,
         type: 3}
