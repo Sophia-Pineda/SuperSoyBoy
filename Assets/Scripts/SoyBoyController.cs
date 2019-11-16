@@ -52,9 +52,8 @@ public class SoyBoyController : MonoBehaviour
 
     public bool IsWallToLeftOrRight()
     {
-        //1
-        bool wallOnleft = Physics2D.Raycast(new Vector2(transform.position.x - width,
-                                                        transform.position.y), - Vector2.right, rayCastLengthCheck);
+        //1 
+        bool wallOnleft = Physics2D.Raycast(new Vector2(transform.position.x - width, transform.position.y), - Vector2.right, rayCastLengthCheck);
         bool wallOnRight = Physics2D.Raycast(new Vector2(transform.position.x + width, transform.position.y), Vector2.right, rayCastLengthCheck);
 
         //2
@@ -101,6 +100,8 @@ public class SoyBoyController : MonoBehaviour
         //1
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Jump");
+
+        animator.SetFloat("Speed", Mathf.Abs(input.x));
         //2
         if (input.x >0.0f)
         {
@@ -113,12 +114,14 @@ public class SoyBoyController : MonoBehaviour
 
         if (input.y >= 1.0f)
         {
-            jumpDurationThreshold += Time.deltaTime;
+            jumpDuration += Time.deltaTime; //Changed PG370
+            animator.SetBool("IsJumping", true);
         }
         else
         {
             isJumping = false;
-            jumpDurationThreshold = 0.0f;
+            animator.SetBool("IsJumping", false);
+            jumpDuration = 0.0f;
         }
 
         if (PlayerIsOnGround() && isJumping == false)
@@ -128,10 +131,12 @@ public class SoyBoyController : MonoBehaviour
                 isJumping = true;
 
             }
+            animator.SetBool("IsOnWall", false);
         }
 
         if (jumpDuration > jumpDurationThreshold)
             input.y = 0.0f;
+
     }
 
     void FixedUpdate()
@@ -175,11 +180,27 @@ public class SoyBoyController : MonoBehaviour
         rb.AddForce(new Vector2(((input.x * speed) - rb.velocity.x) * acceleration, 0));
 
         //4
-        rb.velocity = new Vector2(xVelocity, yVelocity);
+        rb.velocity = new Vector2(xVelocity, yVelocity);  // PG 365
 
-        if(IsWallToLeftOrRight() && !PlayerIsOnGround() && input.y == 1)
+        //if(IsWallToLeftOrRight() && !PlayerIsOnGround() && input.y == 1)
+        //{
+        //    rb.velocity = new Vector2(-GetWallDirection() * speed * 0.75f, rb.velocity.y);   //replaced on PG 370
+        //}
+        if (IsWallToLeftOrRight() && !PlayerIsOnGround() && input.y == 1)
         {
             rb.velocity = new Vector2(-GetWallDirection() * speed * 0.75f, rb.velocity.y);
+            animator.SetBool("IsOnWall", false);
+            animator.SetBool("IsJumping", true);
+        }
+        else if (!IsWallToLeftOrRight())
+        {
+            animator.SetBool("IsOnWall", false);
+            animator.SetBool("IsJumping", true);
+
+        }
+        if (IsWallToLeftOrRight() && !PlayerIsOnGround())
+        {
+            animator.SetBool("IsOnWall", true);
         }
 
 
