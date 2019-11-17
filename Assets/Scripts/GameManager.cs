@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;      // to aid swapping between scenes & rest
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public string playerName;
 
     void Awake()
     {
