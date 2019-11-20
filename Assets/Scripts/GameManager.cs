@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         {
             times.Add(newTime); bFormatter.Serialize(file, times);
         }
-}
+    }
 
     public void DisplayPreviousTimes()
     {   // 1
@@ -93,4 +93,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode loadssceneMode)
+    {
+        if (scene.name == "Game")
+        {
+            DisplayPreviousTimes();
+        }
+    }
+
+    private void Start()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+    }
 }
