@@ -11,5 +11,6 @@ public class LevelItemRepresenation : MonoBehaviour
     public Vector2 position;
     public string prefabName;
     public int spriteOrder;
+    public string spriteLayer;
     public Color spriteColor;
 }
