@@ -1,0 +1,15 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
+[Serializable]
+public class LevelItemRepresenation : MonoBehaviour
+{
+    public Vector3 rotation;
+    public Vector3 scale;
+    public Vector2 position;
+    public string prefabName;
+    public int spriteOrder;
+    public Color spriteColor;
+}
