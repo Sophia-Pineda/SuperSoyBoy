@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isJumping: 0
   speed: 14
-  accel: 6
+  accel: 5.5
   jumpSpeed: 8
   jumpDurationThreshold: 0.25
   airAccel: 3

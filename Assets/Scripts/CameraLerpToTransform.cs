@@ -12,6 +12,7 @@ public class CameraLerpToTransform : MonoBehaviour
     public float minY;
     public float maxX;
     public float maxY;
+    public object cameraZDepth;
 
     //2
     void FixedUpdate()

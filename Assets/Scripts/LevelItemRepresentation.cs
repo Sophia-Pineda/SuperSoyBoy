@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 
 [Serializable]
-public class LevelItemRepresenation : MonoBehaviour
+public class LevelItemRepresentation 
 {
     public Vector3 rotation;
     public Vector3 scale;

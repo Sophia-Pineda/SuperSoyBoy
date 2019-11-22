@@ -5,9 +5,9 @@ using System;
 
 
 [Serializable]
-public class LevelDataRepresentation : MonoBehaviour
+public class LevelDataRepresentation
 {
     public Vector2 playerStartPosition;
     public CameraSettingRepresentation cameraSettings;
-    public LevelItemRepresenation[] levelItems;
+    public LevelItemRepresentation[] levelItems;
 }
