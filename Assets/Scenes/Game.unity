@@ -7220,7 +7220,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143122737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.039875, y: 10.31402, z: 73.71184}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1148057338}
@@ -7403,7 +7403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f6dea05b70ccd498b7d2ca7291ef7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: MY SuperAwesome LEvel
+  levelName: babs
 --- !u!1001 &1148057337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10965,6 +10965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: 
+  buttonPrefab: {fileID: 0}
 --- !u!4 &1696607116
 Transform:
   m_ObjectHideFlags: 0
